@@ -13,4 +13,5 @@ module VagrantPlugins
   end
 end
 
+require 'vagrant-monkeypatches/machine'
 require 'vagrant-monkeypatches/machine_index'
