@@ -15,3 +15,4 @@ end
 
 require 'vagrant-monkeypatches/machine'
 require 'vagrant-monkeypatches/machine_index'
+require 'vagrant-monkeypatches/plugins/providers/virtualbox/driver/version_5_0'
