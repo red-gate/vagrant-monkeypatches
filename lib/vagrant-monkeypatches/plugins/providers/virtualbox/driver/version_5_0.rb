@@ -54,27 +54,6 @@ module VagrantPlugins
           end
         end
 
-        # monkey patched to use VBOX_E_OBJECT_NOT_FOUND.
-        def vm_exists?(uuid)
-          5.times do |i|
-            result = raw("showvminfo", uuid)
-            return true if result.exit_code == 0
-
-            # If vboxmanage returned VBOX_E_OBJECT_NOT_FOUND,
-            # then the vm truly does not exist. Any other error might be transient
-            return false if result.stderr.include?("VBOX_E_OBJECT_NOT_FOUND")
-
-            # Sleep a bit though to give VirtualBox time to fix itself
-            sleep 2
-          end
-
-          # If we reach this point, it means that we consistently got the
-          # failure, do a standard vboxmanage now. This will raise an
-          # exception if it fails again.
-          execute("showvminfo", uuid)
-          return true
-        end
-
       end
     end
   end
