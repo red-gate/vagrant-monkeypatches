@@ -9,7 +9,7 @@ module Vagrant
 
     alias_method :old_initialize, :initialize
     def initialize(*args)
-      @logger = Log4r::Logger.new("vagrant:machine_index")
+      @logger = Log4r::Logger.new("vagrant::machine_index")
       old_initialize(*args)
     end
 
