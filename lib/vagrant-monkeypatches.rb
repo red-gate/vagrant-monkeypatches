@@ -16,4 +16,3 @@ end
 require 'vagrant-monkeypatches/machine_index'
 require 'vagrant-monkeypatches/plugins/providers/virtualbox/driver/version_5_0'
 require 'vagrant-monkeypatches/plugins/providers/virtualbox/driver/version_5_1'
-require 'vagrant-monkeypatches/plugins/communicators/winrm/shell'
