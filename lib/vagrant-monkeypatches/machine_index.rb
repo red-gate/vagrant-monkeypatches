@@ -15,7 +15,7 @@ module Vagrant
     alias_method :old_initialize, :initialize
     def initialize(*args)
       @logger = Log4r::Logger.new("vagrant::machine_index")
-      @win_mutex = Win32::Mutex.open(MUTEXNAME)
+      @win_mutex = Win32::Mutex.new(false, MUTEXNAME)
       old_initialize(*args)
     end
 
