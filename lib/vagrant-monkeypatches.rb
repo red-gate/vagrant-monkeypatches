@@ -14,3 +14,4 @@ module VagrantPlugins
 end
 
 require 'vagrant-monkeypatches/machine_index'
+require 'vagrant-monkeypatches/plugins/providers/virtualbox/action'
