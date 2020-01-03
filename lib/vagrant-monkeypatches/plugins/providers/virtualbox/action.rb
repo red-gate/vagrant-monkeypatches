@@ -20,12 +20,14 @@ module VagrantPlugins
           b.use SyncedFolderCleanup
           b.use SyncedFolders
           b.use PrepareNFSSettings
+          b.use SetDefaultNICType
           b.use ClearNetworkInterfaces
           b.use Network
           b.use NetworkFixIPv6
           b.use ForwardPorts
           b.use SetHostname
           b.use SaneDefaults
+          b.use Disk
           b.use Customize, "pre-boot"
           b.use Boot
           b.use Customize, "post-boot"
